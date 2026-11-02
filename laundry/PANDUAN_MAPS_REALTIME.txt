@@ -1,0 +1,17 @@
+PANDUAN MAPS GPS REAL-TIME LAUNDRYKU
+
+1. Cadangkan folder website dan database terlebih dahulu.
+2. Ekstrak ZIP lalu salin folder laundry ke C:\xampp\htdocs\laundry (timpa file).
+3. Aktifkan Apache dan MySQL; database db_laundry tetap dipakai.
+4. Buka halaman tugas kurir: http://localhost/laundry/kurir/
+5. Masukkan Kode Akses Tugas (token_akses) dari tabel penugasan_kurir.
+6. Tekan Buka Tugas, lalu Mulai Bagikan Lokasi Real-time dan izinkan akses GPS.
+7. Pelanggan membuka tracking.php dan memasukkan kode pesanan yang sama. Peta akan memeriksa lokasi tiap 10 detik.
+
+Catatan:
+- Peta memakai Leaflet dan ubin OpenStreetMap, jadi perangkat memerlukan internet untuk memuat peta.
+- GPS memerlukan izin pengguna; pada perangkat lain selain localhost, browser umumnya membutuhkan HTTPS.
+- Kurir harus tetap membuka halaman tugas selama membagikan lokasi.
+- Endpoint menyiapkan tabel tambahan lokasi_kurir_live otomatis tanpa mengubah tabel pesanan yang ada.
+- Real-time berarti pembaruan berkala (sekitar 10 detik di halaman pelanggan), bukan streaming instan.
+- Jangan bagikan token tugas ke orang yang tidak berwenang.

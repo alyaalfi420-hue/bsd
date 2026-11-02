@@ -1,0 +1,25 @@
+PERUBAHAN HAK AKSES LAUNDRYKU
+
+ADMIN
+- Memegang operasional lengkap: mengelola pesanan, menyetujui pesanan, input berat, mengubah status laundry, menugaskan kurir, mengelola layanan/voucher, dan mengelola top up.
+- Halaman admin/pesanan.php dan admin/topup.php hanya bisa dibuka oleh role admin.
+
+KASIR
+- Tidak membuat pesanan dan tidak mengubah status laundry.
+- Dashboard kasir hanya menampilkan pembayaran yang menunggu konfirmasi dan riwayat pembayaran.
+- Kasir dapat mengonfirmasi pembayaran pelanggan sebagai lunas. Sistem menyimpan paid_at dan membuat notifikasi untuk pelanggan.
+
+DATABASE
+- Impor perbaikan_db_laundry.sql ke database db_laundry agar enum users.role menerima nilai 'kasir'.
+- Cadangkan database terlebih dahulu sebelum mengimpor SQL.
+
+CARA PASANG
+1. Ekstrak ZIP ini.
+2. Salin folder laundry ke C:\xampp\htdocs\laundry (cadangkan folder lama terlebih dahulu).
+3. Impor perbaikan_db_laundry.sql lewat phpMyAdmin jika belum dilakukan.
+4. Pastikan Apache dan MySQL aktif.
+5. Login kasir: kasir@laundry.local / kasir123, pilih role Kasir.
+6. Login admin: admin@laundry.local / admin123, pilih role Admin.
+
+CATATAN PENGUJIAN
+Kode PHP telah diperiksa sintaksnya. Pengujian transaksi langsung memerlukan XAMPP/MySQL lokal pengguna; jangan anggap alur sudah teruji pada database aktif sebelum mencoba login dan konfirmasi pembayaran.
